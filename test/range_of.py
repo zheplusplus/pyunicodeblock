@@ -17,8 +17,12 @@ class RangeOf(unittest.TestCase):
         for ch in string.punctuation:
             self.assertEqual('BASIC_PUNCTUATION', unicodeblock.blocks.of(ch))
 
-        for ch in u'·ÂÃÄÅÒÓÔÕâãäåòóôõ':
+        for ch in u'·§©':
             self.assertEqual('LATIN_1_SUPPLEMENT', unicodeblock.blocks.of(ch))
+        for ch in u'ÂÃÄÅÒÓÔÕâãäåòóôõ':
+            self.assertEqual('LATIN_EXTENDED_LETTER',
+                             unicodeblock.blocks.of(ch))
+
         for ch in u'啊哦呃衣乌淤':
             self.assertEqual('CJK_UNIFIED_IDEOGRAPHS',
                              unicodeblock.blocks.of(ch))
