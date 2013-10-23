@@ -130,3 +130,18 @@ class UnicodeSplit(unittest.TestCase):
         seq = seqs[1]
         self.assertEqual(u'ハルヒ', seq.value)
         self.assertEqual(u'ja', seq.lang)
+
+        seqs = unicodeblock.sequence.usplit(u'カードキャプターさくら')
+        self.assertEqual(1, len(seqs))
+        seq = seqs[0]
+        self.assertEqual(u'カードキャプターさくら', seq.value)
+        self.assertEqual(u'ja', seq.lang)
+
+        seqs = unicodeblock.sequence.usplit(u'丹下桜단게사쿠라')
+        self.assertEqual(2, len(seqs))
+        seq = seqs[0]
+        self.assertEqual(u'丹下桜', seq.value)
+        self.assertEqual(u'cjk', seq.lang)
+        seq = seqs[1]
+        self.assertEqual(u'단게사쿠라', seq.value)
+        self.assertEqual(u'kr', seq.lang)

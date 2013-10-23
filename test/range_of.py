@@ -28,9 +28,9 @@ class RangeOf(unittest.TestCase):
                              unicodeblock.blocks.of(ch))
         for ch in u'あいうえおまみむめも':
             self.assertEqual('HIRAGANA', unicodeblock.blocks.of(ch))
-        for ch in u'アイウエオマミムメモ':
+        for ch in u'アイウエオマミムメモー':
             self.assertEqual('KATAKANA', unicodeblock.blocks.of(ch))
-        for ch in u'〜・ーヽヾヿ【】〒〓〔〕『』「」《》。、〝〞':
+        for ch in u'〜【】〒〓〔〕『』「」《》。、〝〞':
             self.assertEqual('CJK_SYMBOLS_AND_PUNCTUATION',
                              unicodeblock.blocks.of(ch))
         for ch in u'／～（）！？：！，＝':

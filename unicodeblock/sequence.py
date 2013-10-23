@@ -33,6 +33,7 @@ def _init_states():
     ext_latin = State('latin')
     basic_cjk = State('cjk')
     ja = State('ja')
+    kr = State('kr')
 
     number['DIGIT'] = lambda _: number
     basic_latin['BASIC_LATIN'] = lambda _: basic_latin
@@ -49,9 +50,13 @@ def _init_states():
     ja['CJK_UNIFIED_IDEOGRAPHS'] = lambda _: ja
     ja['HIRAGANA'] = lambda _: ja
     ja['KATAKANA'] = lambda _: ja
+    kr['HANGUL_SYLLABLES'] = lambda _: kr
+    kr['HANGUL_JAMO_EXTENDED_B'] = lambda _: kr
 
     return State(None, {
         'DIGIT': lambda _: number,
+        'HANGUL_SYLLABLES': lambda _: kr,
+        'HANGUL_JAMO_EXTENDED_B': lambda _: kr,
         'BASIC_LATIN': lambda _: basic_latin,
         'CJK_UNIFIED_IDEOGRAPHS': lambda _: basic_cjk,
         'HIRAGANA': lambda _: ja,
