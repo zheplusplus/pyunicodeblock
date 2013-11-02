@@ -5,6 +5,7 @@ Python Unicode Block Utilities
 
 * Unicode block type lookup
 * Unicode string split
+* Convert full-width letters into half-width, lower letters
 
 Install
 -------
@@ -31,3 +32,7 @@ Usage
     digit 1
     en Ghost
     en Pain
+
+    >>> import unicodeblock.lower
+    >>> print unicodeblock.lower.lower_fullwidths(u'Ｈｅｌｌｏ Ｗｏｒｌｄ')
+    hello world

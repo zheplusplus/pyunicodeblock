@@ -48,6 +48,26 @@ class UnicodeSplit(unittest.TestCase):
             ('latin', u'Diomedéa'),
         ))
 
+    def test_fullwidth_latins(self):
+        self._assert_sequence(u'Ｔｈｅ ｑｕｉｃｋ ｂｒｏｗｎ ｆｏｘ ' +
+                              u'ｊｕｍｐｓ ｏｖｅｒ ｔｈｅ ｌａｚｙ ｄｏｇ.', (
+            ('en', u'Ｔｈｅ'),
+            ('en', u'ｑｕｉｃｋ'),
+            ('en', u'ｂｒｏｗｎ'),
+            ('en', u'ｆｏｘ'),
+            ('en', u'ｊｕｍｐｓ'),
+            ('en', u'ｏｖｅｒ'),
+            ('en', u'ｔｈｅ'),
+            ('en', u'ｌａｚｙ'),
+            ('en', u'ｄｏｇ'),
+        ))
+
+        self._assert_sequence(u'Ｔｈｅ Ｂｒｏｗｎｓ＇ ｋｉｔｓｕｎｅ', (
+            ('en', u'Ｔｈｅ'),
+            ('en', u'Ｂｒｏｗｎｓ＇'),
+            ('en', u'ｋｉｔｓｕｎｅ'),
+        ))
+
     def test_cjk_mixed(self):
         self._assert_sequence(u'らき☆すた', (
             ('ja', u'らき'),
@@ -83,4 +103,9 @@ class UnicodeSplit(unittest.TestCase):
         self._assert_sequence(u'丹下桜단게사쿠라', (
             ('cjk', u'丹下桜'),
             ('kr', u'단게사쿠라'),
+        ))
+
+        self._assert_sequence(u'ミカサ・アッカーマン', (
+            ('ja', u'ミカサ'),
+            ('ja', u'アッカーマン'),
         ))
