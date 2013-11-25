@@ -9,7 +9,7 @@ import unicodeblock.blocks
 class RangeOf(unittest.TestCase):
     def test_range_of(self):
         self.assertEqual(None, unicodeblock.blocks.of(unichr(0)))
-        self.assertEqual('SPACE', unicodeblock.blocks.of(' '))
+        self.assertEqual('SPACE', unicodeblock.blocks.of(u' '))
         for ch in string.ascii_letters:
             self.assertEqual('BASIC_LATIN', unicodeblock.blocks.of(ch))
         for ch in string.digits:
@@ -45,3 +45,6 @@ class RangeOf(unittest.TestCase):
             self.assertEqual('DINGBATS', unicodeblock.blocks.of(ch))
         for ch in u'←↑→↓↔↕↖↗↘↙↚↛↜↝↞↟':
             self.assertEqual('ARROWS', unicodeblock.blocks.of(ch))
+
+        self.assertEqual('CJK_SYMBOLS_AND_PUNCTUATION',
+                         unicodeblock.blocks.of(u'々'))

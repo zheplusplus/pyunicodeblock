@@ -109,3 +109,16 @@ class UnicodeSplit(unittest.TestCase):
             ('ja', u'ミカサ'),
             ('ja', u'アッカーマン'),
         ))
+
+        self._assert_sequence(u'佐々木 純人', (
+            ('ja', u'佐々木'),
+            ('cjk', u'純人'),
+        ))
+
+        self._assert_sequence(u'々々木', (
+            ('cjk', u'木'),
+        ))
+
+        self._assert_sequence(u'々々木', (
+            ('cjk', u'木'),
+        ))

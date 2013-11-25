@@ -58,10 +58,14 @@ def _init_states():
         lambda c: ext_latin if c == "'" or c == '-' else None)
     ext_latin['LATIN_EXTENDED_LETTER'] = lambda _: ext_latin
 
+    ja_repeat = lambda c: ja if c == u'々' else None
+
+    basic_cjk['CJK_SYMBOLS_AND_PUNCTUATION'] = ja_repeat
     basic_cjk['CJK_UNIFIED_IDEOGRAPHS'] = lambda _: basic_cjk
     basic_cjk['HIRAGANA'] = lambda _: ja
     basic_cjk['KATAKANA'] = lambda _: ja
 
+    ja['CJK_SYMBOLS_AND_PUNCTUATION'] = ja_repeat
     ja['CJK_UNIFIED_IDEOGRAPHS'] = lambda _: ja
     ja['HIRAGANA'] = lambda _: ja
     ja['KATAKANA'] = lambda _: ja
