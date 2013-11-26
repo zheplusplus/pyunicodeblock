@@ -62,11 +62,13 @@ def _init_states():
 
     basic_cjk['CJK_SYMBOLS_AND_PUNCTUATION'] = ja_repeat
     basic_cjk['CJK_UNIFIED_IDEOGRAPHS'] = lambda _: basic_cjk
+    basic_cjk['CJK_COMPATIBILITY_IDEOGRAPHS'] = lambda _: basic_cjk
     basic_cjk['HIRAGANA'] = lambda _: ja
     basic_cjk['KATAKANA'] = lambda _: ja
 
     ja['CJK_SYMBOLS_AND_PUNCTUATION'] = ja_repeat
     ja['CJK_UNIFIED_IDEOGRAPHS'] = lambda _: ja
+    ja['CJK_COMPATIBILITY_IDEOGRAPHS'] = lambda _: ja
     ja['HIRAGANA'] = lambda _: ja
     ja['KATAKANA'] = lambda _: ja
 
@@ -81,6 +83,7 @@ def _init_states():
         'HANGUL_SYLLABLES': lambda _: kr,
         'HANGUL_JAMO_EXTENDED_B': lambda _: kr,
         'CJK_UNIFIED_IDEOGRAPHS': lambda _: basic_cjk,
+        'CJK_COMPATIBILITY_IDEOGRAPHS': lambda _: basic_cjk,
         'HIRAGANA': lambda _: ja,
         'KATAKANA': lambda _: ja,
     })

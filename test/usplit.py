@@ -122,3 +122,8 @@ class UnicodeSplit(unittest.TestCase):
         self._assert_sequence(u'々々木', (
             ('cjk', u'木'),
         ))
+
+        self._assert_sequence(u'島﨑 信長', (
+            ('cjk', u'島﨑'),
+            ('cjk', u'信長'),
+        ))
