@@ -1,5 +1,4 @@
-UnicodeBlock
-============
+# UnicodeBlock
 
 Python Unicode Block Utilities
 
@@ -7,25 +6,29 @@ Python Unicode Block Utilities
 * Unicode string split
 * Convert full-width letters into half-width, lower letters
 
-Install
--------
+## Install
 
-    pip install pyunicodeblock
+For Python3
 
-Usage
------
+    pip install unicodeblock
+
+For Python2
+
+    pip install unicodeblock==0.2.2
+
+## Usage
 
     >>> import unicodeblock.blocks
-    >>> print unicodeblock.blocks.of('0')
+    >>> print(unicodeblock.blocks.of('0'))
     DIGIT
-    >>> print unicodeblock.blocks.of(u'汉')
+    >>> print(unicodeblock.blocks.of('汉'))
     CJK_UNIFIED_IDEOGRAPHS
-    >>> print unicodeblock.blocks.of(u'あ')
+    >>> print(unicodeblock.blocks.of('あ'))
     HIRAGANA
 
     >>> import unicodeblock.sequence
-    >>> for sequence in unicodeblock.sequence.usplit(u'攻殻機動隊ARISE border:1 Ghost Pain'):
-    ...   print sequence.lang, sequence
+    >>> for sequence in unicodeblock.sequence.usplit('攻殻機動隊ARISE border:1 Ghost Pain'):
+    ...   print(sequence.lang, sequence)
     cjk 攻殻機動隊
     en ARISE
     en border
@@ -34,5 +37,9 @@ Usage
     en Pain
 
     >>> import unicodeblock.lower
-    >>> print unicodeblock.lower.lower_fullwidths(u'Ｈｅｌｌｏ Ｗｏｒｌｄ')
+    >>> print(unicodeblock.lower.lower_fullwidths('Ｈｅｌｌｏ Ｗｏｒｌｄ'))
     hello world
+
+## Run test
+
+    python -m unittest test/*.py

@@ -1,21 +1,21 @@
 # encoding=utf-8
 
-import blocks
+from . import blocks
 
 
-class UnicodeSequence(object):
+class UnicodeSequence:
     def __init__(self, val, lang):
         self.value = val
         self.lang = lang
 
     def __str__(self):
-        return self.value.encode('utf-8')
+        return self.value
 
     def __unicode__(self):
         return self.value
 
     def __repr__(self):
-        return str(self)
+        return self.value
 
 
 def _init_states():
