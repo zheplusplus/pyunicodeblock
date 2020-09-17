@@ -270,5 +270,5 @@ _BLOCK_STARTS, _BLOCK_NAMES = (lambda x: (
 ])
 
 
-def of(uchar):
+def of(uchar: str) -> str:
     return _BLOCK_NAMES[bisect.bisect_right(_BLOCK_STARTS, ord(uchar)) - 1]

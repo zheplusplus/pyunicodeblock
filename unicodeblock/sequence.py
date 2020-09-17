@@ -4,9 +4,9 @@ from . import blocks
 
 
 class UnicodeSequence:
-    def __init__(self, val, lang):
-        self.value = val
-        self.lang = lang
+    def __init__(self, val: str, lang: str):
+        self.value: str = val
+        self.lang: str = lang
 
     def __str__(self):
         return self.value
@@ -91,7 +91,7 @@ def _init_states():
 _START = _init_states()
 
 
-def usplit(u):
+def usplit(u: str) -> List[UnicodeSequence]:
     begin = 0
     record = False
     seqs = []
