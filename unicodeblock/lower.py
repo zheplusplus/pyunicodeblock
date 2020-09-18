@@ -1,5 +1,3 @@
-# encoding=utf-8
-
 _KANA_LOW = ord('ぁ')
 _KANA_HIGH = ord('ゖ')
 _KANA_DIFF = ord('ア') - ord('あ')
@@ -32,7 +30,7 @@ def lower_fullwidth(ch: str) -> str:
     return ch
 
 
-def lower_fullwidths(u: str) -> str):
+def lower_fullwidths(u: str) -> str:
     return ''.join([lower_fullwidth(ch) for ch in u])
 
 
