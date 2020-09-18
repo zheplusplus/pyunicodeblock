@@ -5,7 +5,7 @@ _URI = 'https://github.com/neuront/pyunicodeblock'
 
 setup(
     name='unicodeblock',
-    version='0.3.0',
+    version='0.3.1',
     author='Neuron Teckid',
     author_email='lene13@gmail.com',
     license='MIT',
