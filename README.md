@@ -1,3 +1,9 @@
+# Deprecation Warning
+
+This project is deprecated. Please check https://github.com/NightFurySL2001/unicode-blocks-py
+
+The project owner has lost access to pypi, so unable to do a package update as well.
+
 # UnicodeBlock
 
 Python Unicode Block Utilities
